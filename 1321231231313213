@@ -1,0 +1,26 @@
+def solution(polynomial):
+    answer = ''
+    polynomial = polynomial.replace('+','')
+    p = polynomial.split()
+    constant = 0
+    term1 = 0
+    for i in p:
+        if i.isdigit():
+            constant += int(i)
+        else:
+            term1.append(i)
+            
+    term1.sort(key = lambda x : x[-1])
+    result = []
+    for i in term1:
+        if len(result) == 0:
+            result.append(t)
+        elif t[-1] == result[-1][-1]:
+            last = result.pop()
+            if len(t) == 1:
+                t = '1'+1
+            if len(last) == 1:
+                last = "1" + last
+            result.append(str(int(t[:-1]) + int (last[:-1])) + last[-1])
+p = "3x + 7 + x"
+print(solution(p))
